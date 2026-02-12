@@ -7,14 +7,15 @@ const __dirname = dirname(__filename);
 
 class I18n {
   constructor(defaultLocale = 'ja') {
-    this.currentLocale = defaultLocale;
     this.translations = {};
+    this.supportedLocales = ['ja', 'en'];
     this.loadTranslations();
+    // Validate and set default locale
+    this.currentLocale = this.translations[defaultLocale] ? defaultLocale : 'ja';
   }
 
   loadTranslations() {
-    const locales = ['ja', 'en'];
-    locales.forEach(locale => {
+    this.supportedLocales.forEach(locale => {
       try {
         const filePath = join(__dirname, 'locales', `${locale}.json`);
         const content = readFileSync(filePath, 'utf-8');
@@ -25,6 +26,11 @@ class I18n {
     });
   }
 
+  /**
+   * Set the current locale
+   * @param {string} locale - The locale code to switch to
+   * @returns {boolean} true if locale was set successfully, false if locale not found
+   */
   setLocale(locale) {
     if (this.translations[locale]) {
       this.currentLocale = locale;
@@ -33,6 +39,11 @@ class I18n {
     return false;
   }
 
+  /**
+   * Translate a key to the current locale
+   * @param {string} key - Translation key in dot notation (e.g., 'menu.home')
+   * @returns {string} Translated string, falls back to English, or returns key if not found
+   */
   t(key) {
     const keys = key.split('.');
     let value = this.translations[this.currentLocale];

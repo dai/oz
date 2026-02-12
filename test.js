@@ -40,4 +40,11 @@ assert(i18n1.getCurrentLocale() === 'ja', 'Locale should switch back to Japanese
 assert(i18n1.t('greeting') === 'こんにちは', 'Japanese greeting should work again');
 console.log('✓ Passed\n');
 
+// Test 6: Invalid locale falls back to Japanese
+console.log('Test 6: Invalid locale falls back to Japanese');
+const i18n2 = new I18n('fr'); // French not supported
+assert(i18n2.getCurrentLocale() === 'ja', 'Should fallback to Japanese for unsupported locale');
+assert(i18n2.t('greeting') === 'こんにちは', 'Should use Japanese translations after fallback');
+console.log('✓ Passed\n');
+
 console.log('All tests passed! ✓');
