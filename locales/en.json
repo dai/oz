@@ -1,0 +1,17 @@
+{
+  "greeting": "Hello",
+  "welcome": "Welcome",
+  "farewell": "Goodbye",
+  "app_title": "oz - of warp",
+  "start_message": "Starting dialogue",
+  "menu": {
+    "home": "Home",
+    "settings": "Settings",
+    "about": "About"
+  },
+  "messages": {
+    "success": "Success",
+    "error": "An error occurred",
+    "loading": "Loading..."
+  }
+}

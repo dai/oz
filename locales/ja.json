@@ -1,0 +1,17 @@
+{
+  "greeting": "こんにちは",
+  "welcome": "ようこそ",
+  "farewell": "さようなら",
+  "app_title": "oz - ワープ",
+  "start_message": "日本語での対話を開始します",
+  "menu": {
+    "home": "ホーム",
+    "settings": "設定",
+    "about": "について"
+  },
+  "messages": {
+    "success": "成功しました",
+    "error": "エラーが発生しました",
+    "loading": "読み込み中..."
+  }
+}

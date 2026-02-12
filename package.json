@@ -1,0 +1,14 @@
+{
+  "name": "oz",
+  "version": "1.0.0",
+  "description": "oz of warp - Japanese dialogue support",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "keywords": ["i18n", "japanese", "dialogue"],
+  "author": "",
+  "license": "MIT"
+}
